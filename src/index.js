@@ -42,7 +42,41 @@ let stevieNicks = ["Bella Donna (Remastered)",
                    "In Your Dreams",
                    "24 Karat Gold - Songs From The Vault"];
 
-const attr = 'popularity';
+let attr = 'popularity';
+let counter = 0;
+ // 'loudness', 'speechiness',
+let stats = ['danceability', 'duration_ms', 'energy', 'popularity', 'tempo', 'time_signature', 'valence'];
+
+let selects = d3.selectAll('.song-stats');
+selects.selectAll('option')
+      .data(stats)
+      .enter()
+      .append('option')
+      .html(d => { return d; });
+
+selects.property('value', attr);
+
+d3.select('#stevie-sel').on('change', d => {
+  attr = d3.select('#stevie-sel').property('value');
+  selects.property('value', attr);
+  allCharts.forEach(d => {
+    redraw(d[0], d[1], d[2], d[3], d[4], d[5]);
+  });
+});
+d3.select('#fm-sel').on('change', d => {
+  attr = d3.select('#fm-sel').property('value');
+  selects.property('value', attr);
+  allCharts.forEach(d => {
+    redraw(d[0], d[1], d[2], d[3], d[4], d[5]);
+  });
+});
+
+let allCharts = [];
+
+// set the dimensions and margins of the graph
+var margin = {top: 20, right: 0, bottom: 220, left: 30},
+    width = 350 - margin.left - margin.right,
+    height = 320 - margin.top - margin.bottom;
 
 const drawBar = (error, fm, stevie, allTracks, attribution, duets) => {
   attribution.forEach(d => {
@@ -65,10 +99,6 @@ const drawBar = (error, fm, stevie, allTracks, attribution, duets) => {
       d.popularity = allTracks[d.id]['pop'];
     });
     console.log(data);
-    // set the dimensions and margins of the graph
-    var margin = {top: 20, right: 0, bottom: 220, left: 30},
-        width = 350 - margin.left - margin.right,
-        height = 320 - margin.top - margin.bottom;
 
     // set the ranges
     var x = d3.scaleBand()
@@ -191,28 +221,52 @@ const drawBar = (error, fm, stevie, allTracks, attribution, duets) => {
         .attr("height", function(d) { return height - y(d[attr]); });
 
     // add the x Axis
-    svg.append("g")
-        .attr("transform", "translate(0," + height + ")")
-        .call(d3.axisBottom(x))
-        .selectAll("text")
-        // .attr("y", 15)
-        // .attr("x", -10)
-        // .attr("dy", "0em")
-        // .attr("transform", "rotate(315)")
-        // .attr("y", 0)
-        // .attr("x", -15)
-        // .attr("dy", ".35em")
-        // .attr("transform", "rotate(270)")
-        .attr("y", 0)
-        .attr("x", 15)
-        .attr("dy", ".35em")
-        .attr("transform", "rotate(90)")
-        .style("text-anchor", "start");
+    let xHolder = svg.append("g")
+                     .classed('axis-bottom', true)
+                     .attr("transform", "translate(0," + height + ")")
+    xHolder.call(d3.axisBottom(x))
+            .selectAll("text")
+            .attr("y", 0)
+            .attr("x", 15)
+            .attr("dy", ".35em")
+            .attr("transform", "rotate(90)")
+            .style("text-anchor", "start");
 
     // add the y Axis
-    svg.append("g")
-        .call(d3.axisLeft(y));
+    let yHolder = svg.append("g")
+    yHolder.call(d3.axisLeft(y));
+
+    allCharts.push([svg, data, x, y, xHolder, yHolder]);
+
+    // d3.interval(function(){
+    //   redraw();
+    // }, 1000);
+
+
   })
+}
+
+const redraw = (svg, data, x, y, xHolder, yHolder) => {
+  console.log('redraw', svg, data, attr)
+  y.domain([0, d3.max(data, function(d) { return d[attr]; })]);
+  // append the rectangles for the bar chart
+  svg.selectAll(".bar")
+      .data(data)
+    .transition()
+      .attr("x", function(d) { return x(d.name); })
+      .attr("width", x.bandwidth())
+      .attr("y", function(d) { return y(d[attr]); })
+      .attr("height", function(d) { return height - y(d[attr]); });
+
+  xHolder.call(d3.axisBottom(x))
+          .selectAll("text")
+          .attr("y", 0)
+          .attr("x", 15)
+          .attr("dy", ".35em")
+          .attr("transform", "rotate(90)")
+          .style("text-anchor", "start");
+
+  yHolder.call(d3.axisLeft(y));
 }
 
 // load all albums first
@@ -263,7 +317,7 @@ const getAlbums = (error, fmAlbums, stevieAlbums) => {
   albumItem.append('div')
            .classed('image-div', true)
            .append('img')
-           .attr('src', d => { return d.images[0]['url']; });
+           .attr('src', d => { return d.images[1]['url']; });
 
   let albumText = albumItem.append('div')
                            .classed('album-text', true);
