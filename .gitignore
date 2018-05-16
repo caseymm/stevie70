@@ -1,2 +1,4 @@
 .cache-12554783
 .DS_Store
+/node_modules
+node_modules
