@@ -14,147 +14,6 @@ const months = ["Jaunuary",
                 "November",
                 "December"];
 
-// set the dimensions and margins of the graph
-// var margin = {top: 20, right: 150, bottom: 30, left: 50},
-//     width = 960 - margin.left - margin.right,
-//     height = 150 - margin.top - margin.bottom;
-//
-// // array of curve functions and tites
-// var curveArray = [
-//     // {"d3Curve":d3.curveLinear,"curveTitle":"curveLinear"},
-//     // {"d3Curve":d3.curveStep,"curveTitle":"curveStep"}
-//     // {"d3Curve":d3.curveStepBefore,"curveTitle":"curveStepBefore"}
-//     {"d3Curve":d3.curveStepAfter,"curveTitle":"curveStepAfter"}
-//     // {"d3Curve":d3.curveBasis,"curveTitle":"curveBasis"},
-//     // {"d3Curve":d3.curveCardinal,"curveTitle":"curveCardinal"},
-//     // {"d3Curve":d3.curveMonotoneX,"curveTitle":"curveMonotoneX"},
-//     // {"d3Curve":d3.curveCatmullRom,"curveTitle":"curveCatmullRom"}
-//   ];
-//
-// // parse the date / time
-// var parseTime = d3.timeParse("%d-%b-%y");
-//
-// // set the ranges
-// var x = d3.scaleTime().range([0, width]);
-// var y = d3.scaleLinear().range([height, 0]);
-//
-// // define the line
-// var valueline = d3.line()
-//     .curve(d3.curveCatmullRomOpen)
-//     .x(function(d) { return x(d.date); })
-//     .y(function(d) { return y(d.close); });
-//
-// // append the svg obgect to the body of the page
-// // appends a 'group' element to 'svg'
-// // moves the 'group' element to the top left margin
-// var svg = d3.select("body").append("svg")
-//     .attr("width", width + margin.left + margin.right)
-//     .attr("height", height + margin.top + margin.bottom)
-//   .append("g")
-//     .attr("transform",
-//           "translate(" + margin.left + "," + margin.top + ")");
-//
-// const renderStepChart = (error, data0) => {
-//   // console.log(data);
-//   let data = data0['Rumours (Deluxe)'];
-//   data = _.sortBy(data, 'track_number');
-//   let last = data[data.length - 1];
-//   let tmp = {}
-//   Object.assign(tmp, last);
-//   tmp.name = 'dummy';
-//   tmp.track_number = tmp.track_number + 1;
-//   data.push(tmp);
-//   console.log(data);
-//   if (error) throw error;
-//
-//   // format the data
-//   // data.forEach(function(d) {
-//   //     d.date = parseTime(d.date);
-//   //     d.close = +d.close;
-//   // });
-//
-//   // set the colour scale
-//   var color = d3.scaleOrdinal(d3.schemeCategory10);
-//
-//   curveArray.forEach(function(daCurve,i) {
-//
-//     // Scale the range of the data
-//     x.domain(d3.extent(data, function(d) { return d.track_number; }));
-//     // y.domain(d3.extent(data, function(d) { return d.tempo; }));
-//     y.domain([0, d3.max(data, function(d) { return d.tempo; })]);
-//
-//     // Add the paths with different curves.
-//     svg.append("path")
-//       .datum(data)
-//       .attr("class", "line")
-//       .style("stroke", function() { // Add the colours dynamically
-//               return daCurve.color = color(daCurve.curveTitle); })
-//       .attr("id", 'tag'+i) // assign ID
-//       .attr("d", d3.line()
-//                    .curve(daCurve.d3Curve)
-//                    .x(function(d) { return x(d.track_number); })
-//                    .y(function(d) { return y(d.tempo); })
-//                );
-//
-//     // Add the Legend
-//     // svg.append("text")
-//     //     .attr("x", width+5)  // space legend
-//     //     .attr("y", margin.top + 20 + (i * 20))
-//     //     .attr("class", "legend")    // style the legend
-//     //     .style("fill", function() { // Add the colours dynamically
-//     //         return daCurve.color = color(daCurve.curveTitle); })
-//     //     .on("click", function(){
-//     //         // Determine if current line is visible
-//     //         var active   = daCurve.active ? false : true,
-//     //         newOpacity = active ? 0 : 1;
-//     //         // Hide or show the elements based on the ID
-//     //         d3.select("#tag"+i)
-//     //             .transition().duration(100)
-//     //             .style("opacity", newOpacity);
-//     //         // Update whether or not the elements are active
-//     //         daCurve.active = active;
-//     //         })
-//     //     .text(daCurve.curveTitle);
-//   });
-//
-//   // Add the scatterplot
-//   svg.selectAll("block")
-//       .data(data)
-//     .enter().append("rect")
-//       .attr("width", d => {
-//         if(d.name === 'dummy'){
-//           return 0;
-//         } else {
-//           return width/(data.length - 1);
-//         }
-//       })
-//       .attr("height", d => {
-//         if(d.name === 'dummy'){
-//           return 0;
-//         } else {
-//           return height - y(d.tempo);
-//         }
-//       })
-//       .attr("x", function(d) { return x(d.track_number); })
-//       .attr("y", function(d) { return y(d.tempo); })
-//       .attr("fill", "#ff0080");
-//
-//   // Add the X Axis
-//   svg.append("g")
-//       .attr("class", "axis")
-//       .attr("transform", "translate(0," + height + ")")
-//       .call(d3.axisBottom(x));
-//
-//   // Add the Y Axis
-//   svg.append("g")
-//       .attr("class", "axis")
-//       .call(d3.axisLeft(y));
-// }
-//
-// d3.queue()
-//   .defer(d3.json, `${window.location.href}build/assets/data/fleetwood_master.json`)
-//   .await(renderStepChart);
-
 const slugify = (string) => {
   return string.split(' ').join('-');
 }
@@ -185,9 +44,12 @@ let stevieNicks = ["Bella Donna (Remastered)",
 
 const attr = 'popularity';
 
-const drawBar = (error, fm, stevie, allTracks, attribution) => {
+const drawBar = (error, fm, stevie, allTracks, attribution, duets) => {
   attribution.forEach(d => {
     d.lower = d.song.toLowerCase();
+  });
+  duets.forEach(d => {
+    d.lower = d.song.toLowerCase().split(' (')[0];
   });
   Object.keys(stevie).forEach(song => {
     fm[song] = stevie[song];
@@ -216,8 +78,10 @@ const drawBar = (error, fm, stevie, allTracks, attribution) => {
               .range([height, 0]);
 
     let section = d3.select('#fleetwood-section .chart-section');
+    let isStevie = false;
     if(stevieNicks.indexOf(album) > -1){
       section = d3.select('#stevie-section .chart-section');
+      isStevie = true;
     }
 
     let albumSect = section.append('div')
@@ -260,6 +124,24 @@ const drawBar = (error, fm, stevie, allTracks, attribution) => {
         .append('path')
         .attr('d', "M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2")
 
+    defs.append('pattern')
+       .attr('id', 'other_author_duet')
+       .attr('patternUnits', 'userSpaceOnUse')
+       .attr('width', 4)
+       .attr('height', 4)
+       .append('path')
+       .attr('d', "M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2")
+       .attr('style', 'stroke: #d142f4; fill: #ccc;');
+
+    defs.append('pattern')
+      .attr('id', 'co_author_duet')
+      .attr('patternUnits', 'userSpaceOnUse')
+      .attr('width', 4)
+      .attr('height', 4)
+      .append('path')
+      .attr('d', "M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2")
+      .attr('style', 'stroke: #41f49b; fill: #ccc;');
+
     // Scale the range of the data in the domains
     x.domain(data.map(function(d) { return d.name; }));
     y.domain([0, d3.max(data, function(d) { return d[attr]; })]);
@@ -271,18 +153,36 @@ const drawBar = (error, fm, stevie, allTracks, attribution) => {
       .enter().append("rect")
         // .attr('fill', d => { return `rgba(7,73,181,.${d.mode})`})
         .attr("class", d => {
-          // console.log(d.name, _.findWhere(attribution, {'song': d.name}))
-          let attr = _.findWhere(attribution, {'lower': d.name.toLowerCase()});
-          if(attr){
-            if(attr.write === 'true' && attr.vocals === 'true'){
-              return 'bar both';
-            } else if(attr.write === 'true'){
-              return 'bar write';
+          if(isStevie){
+            let attr = _.findWhere(duets, {'lower': d.name.toLowerCase().split(' (')[0]});
+            if(attr){
+              let str = '';
+              if(attr.author !== 'Nicks'){
+                str += 'bar other-author';
+              } else if(attr['co_authored'] !== 'NA'){
+                str += 'bar co-authored';
+              }
+              if(attr.duet !== 'FALSE'){
+                str += ' duet';
+              }
+              return str;
             } else {
-              return 'bar vocals';
+              return 'bar';
             }
           } else {
-            return 'bar';
+            // console.log(d.name, _.findWhere(attribution, {'song': d.name}))
+            let attr = _.findWhere(attribution, {'lower': d.name.toLowerCase()});
+            if(attr){
+              if(attr.write === 'true' && attr.vocals === 'true'){
+                return 'bar both';
+              } else if(attr.write === 'true'){
+                return 'bar write';
+              } else {
+                return 'bar vocals';
+              }
+            } else {
+              return 'bar';
+            }
           }
         })
         .attr("x", function(d) { return x(d.name); })
@@ -381,18 +281,20 @@ const getAlbums = (error, fmAlbums, stevieAlbums) => {
     .defer(d3.json, `${window.location.href}build/assets/data/stevie_master.json`)
     .defer(d3.json, `${window.location.href}build/assets/data/all_tracks_master.json`)
     .defer(d3.csv, `${window.location.href}build/assets/data/stevie_attribution.csv`)
+    .defer(d3.csv, `${window.location.href}build/assets/data/stevie_duets.csv`)
     .await(drawBar);
 }
 
 const getTopTracks = (error, fm_top, stevie_top, lindsey_top) => {
   fm_top['tracks'].forEach(track => {
-    console.log(track.popularity, track.name, track.album.name);
+    console.log(`${track.popularity},${track.name},${track.album.name}`);
   });
 
   console.log('');
   console.log('stevie');
   stevie_top['tracks'].forEach(track => {
-    console.log(track.popularity, track.name, track.album.name);
+    // console.log(track.popularity, track.name, track.album.name);
+    console.log(`${track.popularity},${track.name},${track.album.name}`);
   });
 
   console.log('');

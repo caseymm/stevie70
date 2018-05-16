@@ -14,6 +14,7 @@ h1, h2, h3, h4, h5, h6{
 .lede{
   background-image: url(https://i.makeagif.com/media/5-17-2015/lNO8dg.gif);
   background-size: cover;
+  background-position: center;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -124,6 +125,10 @@ line, path{
   stroke-width:1.5;
 }
 
+#test{
+  display: none;
+}
+
 .bar {
   fill: #ccc;
   &.both{
@@ -138,6 +143,21 @@ line, path{
     // fill: #4f6cef;
     fill: #f44153;
     // stroke-width: 2px;
+  }
+  &.duet{
+    fill: url(#write);
+    &.other-author{
+      fill: url(#other_author_duet);
+    }
+    &.co-authored{
+      fill: url(#co_author_duet);
+    }
+  }
+  &.other-author{
+    fill: #d142f4;
+  }
+  &.co-authored{
+    fill: #41f49b;
   }
 }
 
@@ -177,6 +197,43 @@ line, path{
   &:before{
     background-image: linear-gradient(135deg, #f44153 25%, #000000 25%, #000000 50%, #f44153 50%, #f44153 75%, #000000 75%, #000000 100%);
     background-size: 4px 4px;
+  }
+}
+
+#stevie-legend{
+  text-align: center;
+  margin-bottom: 30px;
+  line-height: 2;
+  div{
+    display: inline-block;
+    margin: 0 15px;
+    &:before{
+      content: '';
+      display: inline-block;
+      margin-right: 10px;
+      width: 15px;
+      height: 15px;
+      position: relative;
+      top: 1px;
+      background-color: #d142f4;
+    }
+  }
+  .leg-co-authored{
+    &:before{
+      background-color: #41f49b;
+    }
+  }
+  .leg-co-authored-duet{
+    &:before{
+      background-image: linear-gradient(135deg, #41f49b 25%, #000000 25%, #000000 50%, #41f49b 50%, #41f49b 75%, #000000 75%, #000000 100%);
+      background-size: 4px 4px;
+    }
+  }
+  .leg-other-author-duet{
+    &:before{
+      background-image: linear-gradient(135deg, #d142f4 25%, #000000 25%, #000000 50%, #d142f4 50%, #d142f4 75%, #000000 75%, #000000 100%);
+      background-size: 4px 4px;
+    }
   }
 }
 
