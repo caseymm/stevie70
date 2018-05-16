@@ -1,0 +1,749 @@
+{
+  "href" : "https://api.spotify.com/v1/artists/7crPfGd2k81ekOoSqQKWWz/albums?offset=0&limit=20&include_groups=album,single,compilation,appears_on",
+  "items" : [ {
+    "album_group" : "album",
+    "album_type" : "album",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/7crPfGd2k81ekOoSqQKWWz"
+      },
+      "href" : "https://api.spotify.com/v1/artists/7crPfGd2k81ekOoSqQKWWz",
+      "id" : "7crPfGd2k81ekOoSqQKWWz",
+      "name" : "Stevie Nicks",
+      "type" : "artist",
+      "uri" : "spotify:artist:7crPfGd2k81ekOoSqQKWWz"
+    } ],
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SK", "SV", "TH", "TR", "TW", "US", "UY", "VN", "ZA" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/3S404OgKoVQSJ3xXrDVlp8"
+    },
+    "href" : "https://api.spotify.com/v1/albums/3S404OgKoVQSJ3xXrDVlp8",
+    "id" : "3S404OgKoVQSJ3xXrDVlp8",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/4ccbd042736d2ff4a4a5dab6131c075d1af0592b",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/1e00ac50a549110d487291460140b4b04aa465ff",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/36eabbd0ee4d5a39e1fc5455aa11bc8c5653cfce",
+      "width" : 64
+    } ],
+    "name" : "Bella Donna (Deluxe Edition)",
+    "release_date" : "2016-11-04",
+    "release_date_precision" : "day",
+    "type" : "album",
+    "uri" : "spotify:album:3S404OgKoVQSJ3xXrDVlp8"
+  }, {
+    "album_group" : "album",
+    "album_type" : "album",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/7crPfGd2k81ekOoSqQKWWz"
+      },
+      "href" : "https://api.spotify.com/v1/artists/7crPfGd2k81ekOoSqQKWWz",
+      "id" : "7crPfGd2k81ekOoSqQKWWz",
+      "name" : "Stevie Nicks",
+      "type" : "artist",
+      "uri" : "spotify:artist:7crPfGd2k81ekOoSqQKWWz"
+    } ],
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SK", "SV", "TH", "TR", "TW", "US", "UY", "VN", "ZA" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/0zuIUmEvxMf8tIYZ5wxJHI"
+    },
+    "href" : "https://api.spotify.com/v1/albums/0zuIUmEvxMf8tIYZ5wxJHI",
+    "id" : "0zuIUmEvxMf8tIYZ5wxJHI",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/a3ba7677a2bc22c3c29c2e6d9907fe02dc7437d9",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/f2644029ce72b00b7e0cafce51c805f78219a69f",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/4640ee6596a2e1a21aa62f7b78914958d0ecdfae",
+      "width" : 64
+    } ],
+    "name" : "The Wild Heart (Deluxe Edition)",
+    "release_date" : "2016-11-04",
+    "release_date_precision" : "day",
+    "type" : "album",
+    "uri" : "spotify:album:0zuIUmEvxMf8tIYZ5wxJHI"
+  }, {
+    "album_group" : "album",
+    "album_type" : "album",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/7crPfGd2k81ekOoSqQKWWz"
+      },
+      "href" : "https://api.spotify.com/v1/artists/7crPfGd2k81ekOoSqQKWWz",
+      "id" : "7crPfGd2k81ekOoSqQKWWz",
+      "name" : "Stevie Nicks",
+      "type" : "artist",
+      "uri" : "spotify:artist:7crPfGd2k81ekOoSqQKWWz"
+    } ],
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SK", "SV", "TH", "TR", "TW", "US", "UY", "VN", "ZA" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/7jCfopf1GmfBfYJh63aW7R"
+    },
+    "href" : "https://api.spotify.com/v1/albums/7jCfopf1GmfBfYJh63aW7R",
+    "id" : "7jCfopf1GmfBfYJh63aW7R",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/d3b91bc03cb3beb5b57fa1e89c7da24590d851b8",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/4fe51d7ea7763c5b09be640a0a2922730268401f",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/10c630c611ccaf370b11b793a27091199ebea4d0",
+      "width" : 64
+    } ],
+    "name" : "24 Karat Gold - Songs From The Vault",
+    "release_date" : "2014-09-30",
+    "release_date_precision" : "day",
+    "type" : "album",
+    "uri" : "spotify:album:7jCfopf1GmfBfYJh63aW7R"
+  }, {
+    "album_group" : "album",
+    "album_type" : "album",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/7crPfGd2k81ekOoSqQKWWz"
+      },
+      "href" : "https://api.spotify.com/v1/artists/7crPfGd2k81ekOoSqQKWWz",
+      "id" : "7crPfGd2k81ekOoSqQKWWz",
+      "name" : "Stevie Nicks",
+      "type" : "artist",
+      "uri" : "spotify:artist:7crPfGd2k81ekOoSqQKWWz"
+    } ],
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SK", "SV", "TH", "TR", "TW", "US", "UY", "VN", "ZA" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/04kchEXrG1dEHCdZzwWVxR"
+    },
+    "href" : "https://api.spotify.com/v1/albums/04kchEXrG1dEHCdZzwWVxR",
+    "id" : "04kchEXrG1dEHCdZzwWVxR",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/d3b91bc03cb3beb5b57fa1e89c7da24590d851b8",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/4fe51d7ea7763c5b09be640a0a2922730268401f",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/10c630c611ccaf370b11b793a27091199ebea4d0",
+      "width" : 64
+    } ],
+    "name" : "24 Karat Gold - Songs From The Vault (Deluxe Version)",
+    "release_date" : "2014-09-30",
+    "release_date_precision" : "day",
+    "type" : "album",
+    "uri" : "spotify:album:04kchEXrG1dEHCdZzwWVxR"
+  }, {
+    "album_group" : "album",
+    "album_type" : "album",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/7crPfGd2k81ekOoSqQKWWz"
+      },
+      "href" : "https://api.spotify.com/v1/artists/7crPfGd2k81ekOoSqQKWWz",
+      "id" : "7crPfGd2k81ekOoSqQKWWz",
+      "name" : "Stevie Nicks",
+      "type" : "artist",
+      "uri" : "spotify:artist:7crPfGd2k81ekOoSqQKWWz"
+    } ],
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SK", "SV", "TH", "TR", "TW", "US", "UY", "VN", "ZA" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/1mJFn6QQYSHfArKZzvrNvj"
+    },
+    "href" : "https://api.spotify.com/v1/albums/1mJFn6QQYSHfArKZzvrNvj",
+    "id" : "1mJFn6QQYSHfArKZzvrNvj",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/8523cebc3536dd03339a6ce92000abceff7f91d5",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/53c9705a20ab47bbabad658dc6e2205fe2888ed6",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/b008d9744d69c8400975743dddd873288828af1e",
+      "width" : 64
+    } ],
+    "name" : "In Your Dreams",
+    "release_date" : "2011-04-29",
+    "release_date_precision" : "day",
+    "type" : "album",
+    "uri" : "spotify:album:1mJFn6QQYSHfArKZzvrNvj"
+  }, {
+    "album_group" : "album",
+    "album_type" : "album",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/7crPfGd2k81ekOoSqQKWWz"
+      },
+      "href" : "https://api.spotify.com/v1/artists/7crPfGd2k81ekOoSqQKWWz",
+      "id" : "7crPfGd2k81ekOoSqQKWWz",
+      "name" : "Stevie Nicks",
+      "type" : "artist",
+      "uri" : "spotify:artist:7crPfGd2k81ekOoSqQKWWz"
+    } ],
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SK", "SV", "TH", "TR", "TW", "US", "UY", "VN", "ZA" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/77Q6ef8LmG5pCA34yyRjOg"
+    },
+    "href" : "https://api.spotify.com/v1/albums/77Q6ef8LmG5pCA34yyRjOg",
+    "id" : "77Q6ef8LmG5pCA34yyRjOg",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/758539ef89c5758aaa7c370db05482723c9c7f5d",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/a071034c822594b58705e1da7ce51860f8cb9e62",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/8bdb94c3a8c4ec7bd74b1c305bc78e96a24a8c61",
+      "width" : 64
+    } ],
+    "name" : "Trouble In Shangri-La",
+    "release_date" : "2001-05-01",
+    "release_date_precision" : "day",
+    "type" : "album",
+    "uri" : "spotify:album:77Q6ef8LmG5pCA34yyRjOg"
+  }, {
+    "album_group" : "album",
+    "album_type" : "album",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/7crPfGd2k81ekOoSqQKWWz"
+      },
+      "href" : "https://api.spotify.com/v1/artists/7crPfGd2k81ekOoSqQKWWz",
+      "id" : "7crPfGd2k81ekOoSqQKWWz",
+      "name" : "Stevie Nicks",
+      "type" : "artist",
+      "uri" : "spotify:artist:7crPfGd2k81ekOoSqQKWWz"
+    } ],
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SK", "SV", "TH", "TR", "TW", "US", "UY", "VN", "ZA" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/6zfkiTCfpCeQCokEMlpudS"
+    },
+    "href" : "https://api.spotify.com/v1/albums/6zfkiTCfpCeQCokEMlpudS",
+    "id" : "6zfkiTCfpCeQCokEMlpudS",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/f8f5c482fa421ce32ed031cec33ef28ff44e6573",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/bba81dd0703e7e15133d6e9051b4c2cc3d8cda83",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/ac96d124da7695e6ee9024abd420d71022d1480b",
+      "width" : 64
+    } ],
+    "name" : "Street Angel",
+    "release_date" : "1994-05-03",
+    "release_date_precision" : "day",
+    "type" : "album",
+    "uri" : "spotify:album:6zfkiTCfpCeQCokEMlpudS"
+  }, {
+    "album_group" : "album",
+    "album_type" : "album",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/7crPfGd2k81ekOoSqQKWWz"
+      },
+      "href" : "https://api.spotify.com/v1/artists/7crPfGd2k81ekOoSqQKWWz",
+      "id" : "7crPfGd2k81ekOoSqQKWWz",
+      "name" : "Stevie Nicks",
+      "type" : "artist",
+      "uri" : "spotify:artist:7crPfGd2k81ekOoSqQKWWz"
+    } ],
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SK", "SV", "TH", "TR", "TW", "US", "UY", "VN", "ZA" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/520iW3fXcWW5mbQToP0hs0"
+    },
+    "href" : "https://api.spotify.com/v1/albums/520iW3fXcWW5mbQToP0hs0",
+    "id" : "520iW3fXcWW5mbQToP0hs0",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/c1f116e5a28e956a2587e91661f50bdda0797911",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/c3e9d59a3ff2754959fa5fc4751f03e0d7eb7b50",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/f5fdc0932e373fa19cff69af9e63c9a69af6e6ae",
+      "width" : 64
+    } ],
+    "name" : "The Other Side Of The Mirror",
+    "release_date" : "1989-05-09",
+    "release_date_precision" : "day",
+    "type" : "album",
+    "uri" : "spotify:album:520iW3fXcWW5mbQToP0hs0"
+  }, {
+    "album_group" : "album",
+    "album_type" : "album",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/7crPfGd2k81ekOoSqQKWWz"
+      },
+      "href" : "https://api.spotify.com/v1/artists/7crPfGd2k81ekOoSqQKWWz",
+      "id" : "7crPfGd2k81ekOoSqQKWWz",
+      "name" : "Stevie Nicks",
+      "type" : "artist",
+      "uri" : "spotify:artist:7crPfGd2k81ekOoSqQKWWz"
+    } ],
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SK", "SV", "TH", "TR", "TW", "US", "UY", "VN", "ZA" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/0guJSEAsHAQ1gXPC18u7hc"
+    },
+    "href" : "https://api.spotify.com/v1/albums/0guJSEAsHAQ1gXPC18u7hc",
+    "id" : "0guJSEAsHAQ1gXPC18u7hc",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/80c0104fa68414733f93c21b065db0de67a9f083",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/ada2188f541dca28733dec8dfa1dce988966dd0e",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/4e31e8e7d48d6d941ac144f9fc538c40e8f709b2",
+      "width" : 64
+    } ],
+    "name" : "Rock A Little",
+    "release_date" : "1986-01-07",
+    "release_date_precision" : "day",
+    "type" : "album",
+    "uri" : "spotify:album:0guJSEAsHAQ1gXPC18u7hc"
+  }, {
+    "album_group" : "album",
+    "album_type" : "album",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/7crPfGd2k81ekOoSqQKWWz"
+      },
+      "href" : "https://api.spotify.com/v1/artists/7crPfGd2k81ekOoSqQKWWz",
+      "id" : "7crPfGd2k81ekOoSqQKWWz",
+      "name" : "Stevie Nicks",
+      "type" : "artist",
+      "uri" : "spotify:artist:7crPfGd2k81ekOoSqQKWWz"
+    } ],
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SK", "SV", "TH", "TR", "TW", "US", "UY", "VN", "ZA" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/29RVdfPWTEu6atVycxx86s"
+    },
+    "href" : "https://api.spotify.com/v1/albums/29RVdfPWTEu6atVycxx86s",
+    "id" : "29RVdfPWTEu6atVycxx86s",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/a3ba7677a2bc22c3c29c2e6d9907fe02dc7437d9",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/f2644029ce72b00b7e0cafce51c805f78219a69f",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/4640ee6596a2e1a21aa62f7b78914958d0ecdfae",
+      "width" : 64
+    } ],
+    "name" : "The Wild Heart (Remastered)",
+    "release_date" : "1983-06-10",
+    "release_date_precision" : "day",
+    "type" : "album",
+    "uri" : "spotify:album:29RVdfPWTEu6atVycxx86s"
+  }, {
+    "album_group" : "album",
+    "album_type" : "album",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/7crPfGd2k81ekOoSqQKWWz"
+      },
+      "href" : "https://api.spotify.com/v1/artists/7crPfGd2k81ekOoSqQKWWz",
+      "id" : "7crPfGd2k81ekOoSqQKWWz",
+      "name" : "Stevie Nicks",
+      "type" : "artist",
+      "uri" : "spotify:artist:7crPfGd2k81ekOoSqQKWWz"
+    } ],
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SK", "SV", "TH", "TR", "TW", "US", "UY", "VN", "ZA" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/0IomjU2bXFng4LQBYn7Het"
+    },
+    "href" : "https://api.spotify.com/v1/albums/0IomjU2bXFng4LQBYn7Het",
+    "id" : "0IomjU2bXFng4LQBYn7Het",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/4ccbd042736d2ff4a4a5dab6131c075d1af0592b",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/1e00ac50a549110d487291460140b4b04aa465ff",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/36eabbd0ee4d5a39e1fc5455aa11bc8c5653cfce",
+      "width" : 64
+    } ],
+    "name" : "Bella Donna (Remastered)",
+    "release_date" : "1981-07-27",
+    "release_date_precision" : "day",
+    "type" : "album",
+    "uri" : "spotify:album:0IomjU2bXFng4LQBYn7Het"
+  }, {
+    "album_group" : "single",
+    "album_type" : "single",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/7crPfGd2k81ekOoSqQKWWz"
+      },
+      "href" : "https://api.spotify.com/v1/artists/7crPfGd2k81ekOoSqQKWWz",
+      "id" : "7crPfGd2k81ekOoSqQKWWz",
+      "name" : "Stevie Nicks",
+      "type" : "artist",
+      "uri" : "spotify:artist:7crPfGd2k81ekOoSqQKWWz"
+    } ],
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SK", "SV", "TH", "TR", "TW", "US", "UY", "VN", "ZA" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/1e3O1YsvCKcFQ53HqKajMl"
+    },
+    "href" : "https://api.spotify.com/v1/albums/1e3O1YsvCKcFQ53HqKajMl",
+    "id" : "1e3O1YsvCKcFQ53HqKajMl",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/c59e1e5c4701fbfd571cd148e4a8652d43c46743",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/e88d3fa4c8c2fced2cd48ae24a211b6d64d4a9c5",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/287922a441253fe817c74e423e37b8bfbdc7792d",
+      "width" : 64
+    } ],
+    "name" : "24 Karat Gold",
+    "release_date" : "2014-09-23",
+    "release_date_precision" : "day",
+    "type" : "album",
+    "uri" : "spotify:album:1e3O1YsvCKcFQ53HqKajMl"
+  }, {
+    "album_group" : "single",
+    "album_type" : "single",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/7crPfGd2k81ekOoSqQKWWz"
+      },
+      "href" : "https://api.spotify.com/v1/artists/7crPfGd2k81ekOoSqQKWWz",
+      "id" : "7crPfGd2k81ekOoSqQKWWz",
+      "name" : "Stevie Nicks",
+      "type" : "artist",
+      "uri" : "spotify:artist:7crPfGd2k81ekOoSqQKWWz"
+    } ],
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SK", "SV", "TH", "TR", "TW", "US", "UY", "VN", "ZA" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/0RTPdWAdXvP9Srpki3BLZJ"
+    },
+    "href" : "https://api.spotify.com/v1/albums/0RTPdWAdXvP9Srpki3BLZJ",
+    "id" : "0RTPdWAdXvP9Srpki3BLZJ",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/dd3c8a12cf6d021089f18aa38fe449235faaa42d",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/7fac294540ef1e3e3457c67640eaac13e000a71f",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/56e4475aed0135d414315e55fc81f07531258f17",
+      "width" : 64
+    } ],
+    "name" : "Starshine",
+    "release_date" : "2014-09-16",
+    "release_date_precision" : "day",
+    "type" : "album",
+    "uri" : "spotify:album:0RTPdWAdXvP9Srpki3BLZJ"
+  }, {
+    "album_group" : "single",
+    "album_type" : "single",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/7crPfGd2k81ekOoSqQKWWz"
+      },
+      "href" : "https://api.spotify.com/v1/artists/7crPfGd2k81ekOoSqQKWWz",
+      "id" : "7crPfGd2k81ekOoSqQKWWz",
+      "name" : "Stevie Nicks",
+      "type" : "artist",
+      "uri" : "spotify:artist:7crPfGd2k81ekOoSqQKWWz"
+    } ],
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SK", "SV", "TH", "TR", "TW", "US", "UY", "VN", "ZA" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/5Vlp3SV96SmVSaqXOp9I7P"
+    },
+    "href" : "https://api.spotify.com/v1/albums/5Vlp3SV96SmVSaqXOp9I7P",
+    "id" : "5Vlp3SV96SmVSaqXOp9I7P",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/032e4ffdfd397b7c83c02921a9228d0d67aa9921",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/dc9db1df0f84d05f353617d5d42c797c9082b3e7",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/14b3a9d304a7d547ae742303048204358d7a2598",
+      "width" : 64
+    } ],
+    "name" : "Lady",
+    "release_date" : "2014-08-25",
+    "release_date_precision" : "day",
+    "type" : "album",
+    "uri" : "spotify:album:5Vlp3SV96SmVSaqXOp9I7P"
+  }, {
+    "album_group" : "single",
+    "album_type" : "single",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/7crPfGd2k81ekOoSqQKWWz"
+      },
+      "href" : "https://api.spotify.com/v1/artists/7crPfGd2k81ekOoSqQKWWz",
+      "id" : "7crPfGd2k81ekOoSqQKWWz",
+      "name" : "Stevie Nicks",
+      "type" : "artist",
+      "uri" : "spotify:artist:7crPfGd2k81ekOoSqQKWWz"
+    } ],
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SK", "SV", "TH", "TR", "TW", "US", "UY", "VN", "ZA" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/0QeqpDlJv9hSgnm4dUHTi9"
+    },
+    "href" : "https://api.spotify.com/v1/albums/0QeqpDlJv9hSgnm4dUHTi9",
+    "id" : "0QeqpDlJv9hSgnm4dUHTi9",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/de209f4902786c4286815fbbd9b354fb10855d64",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/cd5bdffc890f4ee0f7137471ff40adc657d0e108",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/36705aa06a4900a9c51c887449ec55c586fe107a",
+      "width" : 64
+    } ],
+    "name" : "The Dealer",
+    "release_date" : "2014-08-05",
+    "release_date_precision" : "day",
+    "type" : "album",
+    "uri" : "spotify:album:0QeqpDlJv9hSgnm4dUHTi9"
+  }, {
+    "album_group" : "single",
+    "album_type" : "single",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/7crPfGd2k81ekOoSqQKWWz"
+      },
+      "href" : "https://api.spotify.com/v1/artists/7crPfGd2k81ekOoSqQKWWz",
+      "id" : "7crPfGd2k81ekOoSqQKWWz",
+      "name" : "Stevie Nicks",
+      "type" : "artist",
+      "uri" : "spotify:artist:7crPfGd2k81ekOoSqQKWWz"
+    } ],
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SK", "SV", "TH", "TR", "TW", "US", "UY", "VN", "ZA" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/5fJ5FSJPK5RxfIAC4Q1wTI"
+    },
+    "href" : "https://api.spotify.com/v1/albums/5fJ5FSJPK5RxfIAC4Q1wTI",
+    "id" : "5fJ5FSJPK5RxfIAC4Q1wTI",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/54caacde4dde6e80d21c7d0522151b997bd9df48",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/2f54bc5f4857c46d0aebf60859b0e6b7d751d2cb",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/4fdd81ab070004a76d6542924f047cf60e394bd6",
+      "width" : 64
+    } ],
+    "name" : "Secret Love",
+    "release_date" : "2011-02-07",
+    "release_date_precision" : "day",
+    "type" : "album",
+    "uri" : "spotify:album:5fJ5FSJPK5RxfIAC4Q1wTI"
+  }, {
+    "album_group" : "single",
+    "album_type" : "single",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/7crPfGd2k81ekOoSqQKWWz"
+      },
+      "href" : "https://api.spotify.com/v1/artists/7crPfGd2k81ekOoSqQKWWz",
+      "id" : "7crPfGd2k81ekOoSqQKWWz",
+      "name" : "Stevie Nicks",
+      "type" : "artist",
+      "uri" : "spotify:artist:7crPfGd2k81ekOoSqQKWWz"
+    } ],
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SK", "SV", "TH", "TR", "TW", "US", "UY", "VN", "ZA" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/0Y0RCbLQ49m6o6bxp3uSXo"
+    },
+    "href" : "https://api.spotify.com/v1/albums/0Y0RCbLQ49m6o6bxp3uSXo",
+    "id" : "0Y0RCbLQ49m6o6bxp3uSXo",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/81d23cb9317a66acf579b72f52ba4f0fd29aa155",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/c1a633c01c296aeaa061e007d3ab105d58f495e4",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/a40af19612dfb33d6cb5f212920046c2073fe805",
+      "width" : 64
+    } ],
+    "name" : "Stand Back (DMD Maxi)",
+    "release_date" : "2007-05-29",
+    "release_date_precision" : "day",
+    "type" : "album",
+    "uri" : "spotify:album:0Y0RCbLQ49m6o6bxp3uSXo"
+  }, {
+    "album_group" : "single",
+    "album_type" : "single",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/7crPfGd2k81ekOoSqQKWWz"
+      },
+      "href" : "https://api.spotify.com/v1/artists/7crPfGd2k81ekOoSqQKWWz",
+      "id" : "7crPfGd2k81ekOoSqQKWWz",
+      "name" : "Stevie Nicks",
+      "type" : "artist",
+      "uri" : "spotify:artist:7crPfGd2k81ekOoSqQKWWz"
+    } ],
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SK", "SV", "TH", "TR", "TW", "US", "UY", "VN", "ZA" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/7DCRtkMpstVdipKYOFadyD"
+    },
+    "href" : "https://api.spotify.com/v1/albums/7DCRtkMpstVdipKYOFadyD",
+    "id" : "7DCRtkMpstVdipKYOFadyD",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/81d23cb9317a66acf579b72f52ba4f0fd29aa155",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/c1a633c01c296aeaa061e007d3ab105d58f495e4",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/a40af19612dfb33d6cb5f212920046c2073fe805",
+      "width" : 64
+    } ],
+    "name" : "Stand Back [Tracy Takes You Home Dub]",
+    "release_date" : "2007-05-29",
+    "release_date_precision" : "day",
+    "type" : "album",
+    "uri" : "spotify:album:7DCRtkMpstVdipKYOFadyD"
+  }, {
+    "album_group" : "single",
+    "album_type" : "single",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/7crPfGd2k81ekOoSqQKWWz"
+      },
+      "href" : "https://api.spotify.com/v1/artists/7crPfGd2k81ekOoSqQKWWz",
+      "id" : "7crPfGd2k81ekOoSqQKWWz",
+      "name" : "Stevie Nicks",
+      "type" : "artist",
+      "uri" : "spotify:artist:7crPfGd2k81ekOoSqQKWWz"
+    } ],
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SK", "SV", "TH", "TR", "TW", "US", "UY", "VN", "ZA" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/3EBT8ag5oXdYuodjtE4zK7"
+    },
+    "href" : "https://api.spotify.com/v1/albums/3EBT8ag5oXdYuodjtE4zK7",
+    "id" : "3EBT8ag5oXdYuodjtE4zK7",
+    "images" : [ {
+      "height" : 640,
+      "url" : "https://i.scdn.co/image/e04bb64fc0e45c877cf9c230a97dc3bbf6fa2eca",
+      "width" : 640
+    }, {
+      "height" : 300,
+      "url" : "https://i.scdn.co/image/ba5b2728f8d040b4c5d95a5ea25448a7a2576172",
+      "width" : 300
+    }, {
+      "height" : 64,
+      "url" : "https://i.scdn.co/image/44194c7403c2bf134c23d1ec1034fcc7ce4e4a06",
+      "width" : 64
+    } ],
+    "name" : "In Interview With Robin Ross DJ",
+    "release_date" : "1994",
+    "release_date_precision" : "year",
+    "type" : "album",
+    "uri" : "spotify:album:3EBT8ag5oXdYuodjtE4zK7"
+  }, {
+    "album_group" : "compilation",
+    "album_type" : "compilation",
+    "artists" : [ {
+      "external_urls" : {
+        "spotify" : "https://open.spotify.com/artist/7crPfGd2k81ekOoSqQKWWz"
+      },
+      "href" : "https://api.spotify.com/v1/artists/7crPfGd2k81ekOoSqQKWWz",
+      "id" : "7crPfGd2k81ekOoSqQKWWz",
+      "name" : "Stevie Nicks",
+      "type" : "artist",
+      "uri" : "spotify:artist:7crPfGd2k81ekOoSqQKWWz"
+    } ],
+    "available_markets" : [ "AD", "AR", "AT", "AU", "BE", "BG", "BO", "BR", "CA", "CH", "CL", "CO", "CR", "CY", "CZ", "DE", "DK", "DO", "EC", "EE", "ES", "FI", "FR", "GB", "GR", "GT", "HK", "HN", "HU", "ID", "IE", "IL", "IS", "IT", "JP", "LI", "LT", "LU", "LV", "MC", "MT", "MX", "MY", "NI", "NL", "NO", "NZ", "PA", "PE", "PH", "PL", "PT", "PY", "RO", "SE", "SG", "SK", "SV", "TH", "TR", "TW", "US", "UY", "VN", "ZA" ],
+    "external_urls" : {
+      "spotify" : "https://open.spotify.com/album/7q0dYnAjmqZBJLhMBre8aL"
+    },
+    "href" : "https://api.spotify.com/v1/albums/7q0dYnAjmqZBJLhMBre8aL",
+    "id" : "7q0dYnAjmqZBJLhMBre8aL",
+    "images" : [ {
+      "height" : 562,
+      "url" : "https://i.scdn.co/image/59125209ffecbb0c437d7a863071978db9957fd8",
+      "width" : 640
+    }, {
+      "height" : 263,
+      "url" : "https://i.scdn.co/image/46f26243d3c4ad1b603b181b543715e674036419",
+      "width" : 300
+    }, {
+      "height" : 56,
+      "url" : "https://i.scdn.co/image/157f368fdc7f49cb41d498c19d92a8976e954c15",
+      "width" : 64
+    } ],
+    "name" : "Crystal Visions...The Very Best Of Stevie Nicks (Standard Version)",
+    "release_date" : "2007-03-27",
+    "release_date_precision" : "day",
+    "type" : "album",
+    "uri" : "spotify:album:7q0dYnAjmqZBJLhMBre8aL"
+  } ],
+  "limit" : 20,
+  "next" : "https://api.spotify.com/v1/artists/7crPfGd2k81ekOoSqQKWWz/albums?offset=20&limit=20&include_groups=album,single,compilation,appears_on",
+  "offset" : 0,
+  "previous" : null,
+  "total" : 49
+}

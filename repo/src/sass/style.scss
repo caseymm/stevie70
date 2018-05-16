@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,500,700,900');
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Work Sans', sans-serif;
+  margin: 0px;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-weight: 700;
+}
+
+.lede{
+  background-image: url(https://i.makeagif.com/media/5-17-2015/lNO8dg.gif);
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1{
+  font-size: 150px;
+  text-align: center;
+  margin: auto;
+  &.title{
+    // max-width: 300px;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #fff;
+    color: rgba(255,255,255,0.3);
+    div{
+      font-size: 80px;
+      margin-top: -5px;
+    }
+  }
+  @media(max-width: 600px){
+    font-size: 100px;
+  }
+  // &.at{
+  //   font-size: 60px;
+  // }
+  // &.seventy{
+  //   font-size: 200px;
+  //   background: linear-gradient(to bottom, rgba(255,255,255,.2), rgba(222,112,6,0.2)),url('assets/images/glitter.gif');
+  //   background-attachment: fixed;
+  //   -webkit-text-fill-color: transparent;
+  //   -webkit-background-clip: text;
+  // }
+}
+
+h2{
+  font-size: 45px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h3{
+  font-size: 22px;
+}
+
+.intro{
+  max-width: 550px;
+  // width: 100%;
+  margin: 50px auto;
+  padding: 15px;
+  p{
+    font-size: 22px;
+    line-height: 1.4;
+    &:first-child:first-letter {
+      color: #d142f4;
+      float: left;
+      font-size: 109px;
+      font-weight: bold;
+      line-height: 60px;
+      padding-top: 16px;
+      margin-left: -6px;
+      padding-right: 8px;
+    }
+  }
+}
+
+.stevie-gif{
+  // width: 100%;
+  max-width: 550px;
+  padding: 15px;
+  margin: auto;
+  img{
+    width: 100%;
+  }
+}
+
+#album-timeline{
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 2px;
+}
+
+text{
+  fill: #fff;
+  font-family: 'Work Sans', sans-serif;
+}
+
+line, path{
+  stroke: #fff;
+}
+
+.legend {
+    font-size: 16px;
+    font-weight: bold;
+    text-anchor: left;
+}
+
+#both{
+  stroke-width:1.5;
+  // stroke: #f44153;
+}
+
+#write{
+  stroke-width:1.5;
+}
+
+.bar {
+  fill: #ccc;
+  &.both{
+    fill: url(#both);
+    // stroke-width: 2px;
+  }
+  &.write{
+    fill: url(#write);
+  //   stroke-width: 2px;
+  }
+  &.vocals{
+    // fill: #4f6cef;
+    fill: #f44153;
+    // stroke-width: 2px;
+  }
+}
+
+// background-image: linear-gradient(135deg, #f44153 25%, #000000 25%, #000000 50%, #f44153 50%, #f44153 75%, #000000 75%, #000000 100%);
+// background-size: 5.66px 5.66px;
+#fleetwood-legend{
+  text-align: center;
+  margin-bottom: 30px;
+  line-height: 2;
+  div{
+    display: inline-block;
+    margin: 0 15px;
+    &:before{
+      content: '';
+      display: inline-block;
+      margin-right: 10px;
+      width: 15px;
+      height: 15px;
+      position: relative;
+      top: 1px;
+      background-color: #f44153;
+    }
+  }
+}
+.leg-vocals{
+  &:before{
+
+  }
+}
+.leg-lyrics{
+  &:before{
+    background-image: linear-gradient(135deg, #ccc 25%, #000000 25%, #000000 50%, #ccc 50%, #ccc 75%, #000000 75%, #000000 100%);
+    background-size: 4px 4px;
+  }
+}
+.leg-both{
+  &:before{
+    background-image: linear-gradient(135deg, #f44153 25%, #000000 25%, #000000 50%, #f44153 50%, #f44153 75%, #000000 75%, #000000 100%);
+    background-size: 4px 4px;
+  }
+}
+
+.chart-section{
+  display: grid; /* (1) */
+  grid-template-columns: repeat(auto-fit, 350px); /* (2) */
+  grid-gap: 1rem; /* (3) */
+  justify-content:space-evenly;
+  align-content: flex-start;
+}
+
+.album {
+  // display: inline-block;
+  max-width: 350px;
+  // @media(min-width: 600px){
+  //   margin: 0 15px;
+  // }
+  img{
+    width: 100%;
+  }
+  .holder{
+    padding: 5px;
+  }
+}
+
+.album-item{
+  // border-left: 5px solid red;
+  max-width: 600px;
+  width: 100%;
+  margin: 20px auto;
+  padding: 10px 10px 8px 10px;
+  h3{
+    margin: 0 10px;
+  }
+  h5{
+    margin: 5px 10px;
+  }
+  // &.fm{
+  //   border-left-color: blue;
+  // }
+  &.stevie{
+    background-color: rgba(209, 66, 244, .4);
+  }
+  div{
+    display: inline-block;
+    vertical-align: top;
+    &.image-div{
+      max-width: 80px;
+      img{
+        width: 100%;
+      }
+    }
+  }
+}
+
+.inset{
+  width: 60px;
+  display: inline-block;
+  float: left;
+  img{
+    width: 100%;
+  }
+}
+
+.info{
+  padding-left: 70px;
+  vertical-align: top;
+  h3, h4, h5{
+    margin: 0 10px;
+  }
+  h3{
+    margin-bottom: 5px;
+  }
+}
