@@ -44,8 +44,8 @@ let stevieNicks = ["Bella Donna (Remastered)",
 
 let attr = 'popularity';
 let counter = 0;
- // 'loudness', 'speechiness',
-let stats = ['danceability', 'duration_ms', 'energy', 'popularity', 'tempo', 'time_signature', 'valence'];
+ // 'loudness', 'speechiness', time_signature',
+let stats = ['danceability', 'duration', 'energy', 'popularity', 'tempo', 'valence'];
 
 let selects = d3.selectAll('.song-stats');
 selects.selectAll('option')
@@ -59,6 +59,9 @@ selects.property('value', attr);
 d3.select('#stevie-sel').on('change', d => {
   attr = d3.select('#stevie-sel').property('value');
   selects.property('value', attr);
+  if(attr === 'duration'){
+    attr = 'duration_ms';
+  }
   allCharts.forEach(d => {
     redraw(d[0], d[1], d[2], d[3], d[4], d[5]);
   });
@@ -66,6 +69,9 @@ d3.select('#stevie-sel').on('change', d => {
 d3.select('#fm-sel').on('change', d => {
   attr = d3.select('#fm-sel').property('value');
   selects.property('value', attr);
+  if(attr === 'duration'){
+    attr = 'duration_ms';
+  }
   allCharts.forEach(d => {
     redraw(d[0], d[1], d[2], d[3], d[4], d[5]);
   });
@@ -186,11 +192,11 @@ const drawBar = (error, fm, stevie, allTracks, attribution, duets) => {
           if(isStevie){
             let attr = _.findWhere(duets, {'lower': d.name.toLowerCase().split(' (')[0]});
             if(attr){
-              let str = '';
+              let str = 'bar';
               if(attr.author !== 'Nicks'){
-                str += 'bar other-author';
+                str += ' other-author';
               } else if(attr['co_authored'] !== 'NA'){
-                str += 'bar co-authored';
+                str += ' co-authored';
               }
               if(attr.duet !== 'FALSE'){
                 str += ' duet';
@@ -234,7 +240,7 @@ const drawBar = (error, fm, stevie, allTracks, attribution, duets) => {
 
     // add the y Axis
     let yHolder = svg.append("g")
-    yHolder.call(d3.axisLeft(y));
+    yHolder.call(d3.axisLeft(y).ticks(5));
 
     allCharts.push([svg, data, x, y, xHolder, yHolder]);
 
@@ -247,8 +253,11 @@ const drawBar = (error, fm, stevie, allTracks, attribution, duets) => {
 }
 
 const redraw = (svg, data, x, y, xHolder, yHolder) => {
-  console.log('redraw', svg, data, attr)
+  // console.log('redraw', svg, data, attr)
   y.domain([0, d3.max(data, function(d) { return d[attr]; })]);
+  if(attr === 'energy' || attr === 'danceability' || attr === 'valence'){
+    y.domain([0, 1]);
+  }
   // append the rectangles for the bar chart
   svg.selectAll(".bar")
       .data(data)
@@ -266,7 +275,19 @@ const redraw = (svg, data, x, y, xHolder, yHolder) => {
           .attr("transform", "rotate(90)")
           .style("text-anchor", "start");
 
-  yHolder.call(d3.axisLeft(y));
+  let ticks = d3.axisLeft(y).ticks(5);
+  if(attr === 'duration_ms'){
+    ticks = d3.axisLeft(y).ticks(5).tickFormat(d => {
+      // console.log(d, (d/1000)/60, Math.floor((d/1000)/60), (d/1000)%60)
+      let minutes = Math.floor((d/1000)/60);
+      let seconds = (d/1000)%60;
+      if(seconds === 0){
+        seconds = '00';
+      }
+      return `${minutes}:${seconds}`; });
+  }
+
+  yHolder.call(ticks);
 }
 
 // load all albums first
