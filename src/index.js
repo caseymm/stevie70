@@ -47,6 +47,43 @@ let counter = 0;
  // 'loudness', 'speechiness', time_signature',
 let stats = ['danceability', 'duration', 'energy', 'popularity', 'tempo', 'valence'];
 
+let statsDesc = ['Danceability measures how suitable a track is for dancing and is scored based on the track\'s \
+tempo, rhythm stability, beat strength, and overall regularity. The score is measured between 0 and 1, \
+with 0 being the least danceable and 1 being the most danceable.',
+'Duration of the track',
+'Energy mesasures the intensity and activity of a track. It is valued from 0 to 1, with 0 representing \
+the least energetic and 1 the most.',
+'Popularity is measured between 0 and 100, with 100 being the most popular. The score is based on the total \
+number of plays the track has combined with how recently the track was played.',
+'The estimated tempo of the track in beats per minute (BPM).',
+'Valence measures the musical positivity of a track. It is scored from 0 to 1. Tracks with a lower valence \
+score are usually more negative (e.g. sad, depressed, angry), while tracks with a higher valence are usually \
+more positive (e.g. happy, cheerful, euphoric).'];
+
+// Danceability describes how suitable a track is for dancing based on a combination of musical elements
+// including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is least
+// danceable and 1.0 is most danceable.
+
+// The duration of the track in milliseconds.
+
+// Energy is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity.
+// Typically, energetic tracks feel fast, loud, and noisy. For example, death metal has high energy,
+// while a Bach prelude scores low on the scale. Perceptual features contributing to this attribute
+// include dynamic range, perceived loudness, timbre, onset rate, and general entropy
+
+// The popularity of a track is a value between 0 and 100, with 100 being the most popular.
+// The popularity is calculated by algorithm and is based, in the most part, on the total number
+// of plays the track has had and how recent those plays are.
+// Generally speaking, songs that are being played a lot now will have a higher popularity than
+// songs that were played a lot in the past.
+
+// The overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo
+// is the speed or pace of a given piece and derives directly from the average beat duration.
+
+// A measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track. Tracks with high
+// valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound
+// more negative (e.g. sad, depressed, angry).
+
 let selects = d3.selectAll('.song-stats');
 selects.selectAll('option')
       .data(stats)
@@ -55,10 +92,18 @@ selects.selectAll('option')
       .html(d => { return d; });
 
 selects.property('value', attr);
+d3.selectAll('.stats-desc').html(() => {
+  let idx = stats.indexOf(attr);
+  return statsDesc[idx];
+});
 
 d3.select('#stevie-sel').on('change', d => {
   attr = d3.select('#stevie-sel').property('value');
   selects.property('value', attr);
+  d3.selectAll('.stats-desc').html(() => {
+    let idx = stats.indexOf(attr);
+    return statsDesc[idx];
+  });
   if(attr === 'duration'){
     attr = 'duration_ms';
   }
@@ -69,6 +114,10 @@ d3.select('#stevie-sel').on('change', d => {
 d3.select('#fm-sel').on('change', d => {
   attr = d3.select('#fm-sel').property('value');
   selects.property('value', attr);
+  d3.selectAll('.stats-desc').html(() => {
+    let idx = stats.indexOf(attr);
+    return statsDesc[idx];
+  });
   if(attr === 'duration'){
     attr = 'duration_ms';
   }
