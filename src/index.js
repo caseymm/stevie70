@@ -46,6 +46,8 @@ let attr = 'popularity';
 let counter = 0;
  // 'loudness', 'speechiness', time_signature',
 let stats = ['danceability', 'duration', 'energy', 'popularity', 'tempo', 'valence'];
+// let statsMax = [.828, 422693, .977, 78, 206.293, .988];
+let statsMax = [1, 422693, 1, 80, 206.293, 1];
 
 let statsDesc = ['Danceability measures how suitable a track is for dancing and is scored based on the track\'s \
 tempo, rhythm stability, beat strength, and overall regularity. The score is measured between 0 and 1, \
@@ -97,8 +99,8 @@ d3.selectAll('.stats-desc').html(() => {
   return statsDesc[idx];
 });
 
-d3.select('#stevie-sel').on('change', d => {
-  attr = d3.select('#stevie-sel').property('value');
+d3.select('#fm-sel').on('change', d => {
+  attr = d3.select('#fm-sel').property('value');
   selects.property('value', attr);
   d3.selectAll('.stats-desc').html(() => {
     let idx = stats.indexOf(attr);
@@ -111,8 +113,9 @@ d3.select('#stevie-sel').on('change', d => {
     redraw(d[0], d[1], d[2], d[3], d[4], d[5]);
   });
 });
-d3.select('#fm-sel').on('change', d => {
-  attr = d3.select('#fm-sel').property('value');
+
+d3.select('#stevie-sel').on('change', d => {
+  attr = d3.select('#stevie-sel').property('value');
   selects.property('value', attr);
   d3.selectAll('.stats-desc').html(() => {
     let idx = stats.indexOf(attr);
@@ -229,8 +232,8 @@ const drawBar = (error, fm, stevie, allTracks, attribution, duets) => {
 
     // Scale the range of the data in the domains
     x.domain(data.map(function(d) { return d.name; }));
-    y.domain([0, d3.max(data, function(d) { return d[attr]; })]);
-    // y.domain([0, 200]);
+    // y.domain([0, d3.max(data, function(d) { return d[attr]; })]);
+    y.domain([0, 80]);
 
     // append the rectangles for the bar chart
     svg.selectAll(".bar")
@@ -282,10 +285,10 @@ const drawBar = (error, fm, stevie, allTracks, attribution, duets) => {
     xHolder.call(d3.axisBottom(x))
             .selectAll("text")
             .attr("y", 0)
-            .attr("x", 15)
+            .attr("x", -15)
             .attr("dy", ".35em")
-            .attr("transform", "rotate(90)")
-            .style("text-anchor", "start");
+            .attr("transform", "rotate(270)")
+            .style("text-anchor", "end");
 
     // add the y Axis
     let yHolder = svg.append("g")
@@ -293,20 +296,16 @@ const drawBar = (error, fm, stevie, allTracks, attribution, duets) => {
 
     allCharts.push([svg, data, x, y, xHolder, yHolder]);
 
-    // d3.interval(function(){
-    //   redraw();
-    // }, 1000);
-
-
   })
 }
 
 const redraw = (svg, data, x, y, xHolder, yHolder) => {
-  // console.log('redraw', svg, data, attr)
-  y.domain([0, d3.max(data, function(d) { return d[attr]; })]);
-  if(attr === 'energy' || attr === 'danceability' || attr === 'valence'){
-    y.domain([0, 1]);
+  let phrase = attr;
+  if(phrase === 'duration_ms'){
+    phrase = 'duration';
   }
+  // console.log('redraw', svg, data, attr)
+  y.domain([0, statsMax[stats.indexOf(phrase)]]);
   // append the rectangles for the bar chart
   svg.selectAll(".bar")
       .data(data)
