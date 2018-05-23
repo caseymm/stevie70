@@ -1,4 +1,4 @@
-const d3 = require("d3");
+const d3 = Object.assign(require("d3"), require("d3-simple-slider"));
 const _ = require("underscore");
 
 const months = ["Jaunuary",
@@ -231,7 +231,7 @@ const drawBar = (error, fm, stevie, allTracks, attribution, duets) => {
       .attr('style', 'stroke: #41f49b; fill: #ccc;');
 
     // Scale the range of the data in the domains
-    x.domain(data.map(function(d) { return d.name; }));
+    x.domain(data.map(function(d) { return d.name.split(' (')[0]; }));
     // y.domain([0, d3.max(data, function(d) { return d[attr]; })]);
     y.domain([0, 80]);
 
@@ -273,10 +273,35 @@ const drawBar = (error, fm, stevie, allTracks, attribution, duets) => {
             }
           }
         })
-        .attr("x", function(d) { return x(d.name); })
+        .attr("x", function(d) { return x(d.name.split(' (')[0]); })
         .attr("width", x.bandwidth())
         .attr("y", function(d) { return y(d[attr]); })
-        .attr("height", function(d) { return height - y(d[attr]); });
+        .attr("height", function(d) { return height - y(d[attr]); })
+        .on('click', d => {
+          d3.select('#stevie-audio audio').node().pause();
+          d3.select('#fleetwood-audio audio').node().pause();
+          // console.log(d, albumData);
+          let sourceNode = d3.select('#stevie-audio');
+          if(isStevie){
+            d3.select('#stevie-audio source').attr('src', d.preview_url);
+            d3.select('#stevie-audio audio').node().load();
+            d3.select('#stevie-audio audio').node().play();
+          } else {
+            sourceNode = d3.select('#fleetwood-audio');
+            d3.select('#fleetwood-audio source').attr('src', d.preview_url);
+            d3.select('#fleetwood-audio audio').node().load();
+            d3.select('#fleetwood-audio audio').node().play();
+          }
+          sourceNode.select('.player-img img').attr('src', albumData.images[1]['url']);
+          sourceNode.select('.song-title').html(d.name.split(' (')[0]);
+          sourceNode.select('.album-title').html(`(${album})`);
+          let titleWidth = sourceNode.select('.song-title').node().getBoundingClientRect()['width'];
+          let albumWidth = sourceNode.select('.album-title').node().getBoundingClientRect()['width'];
+          sourceNode.select('.song-info').classed('marquee', false);
+          if(titleWidth + albumWidth > d3.select('.chart-section').node().getBoundingClientRect()['width'] - 20){
+            sourceNode.select('.song-info').classed('marquee', true);
+          }
+        });
 
     // add the x Axis
     let xHolder = svg.append("g")
@@ -295,6 +320,41 @@ const drawBar = (error, fm, stevie, allTracks, attribution, duets) => {
     yHolder.call(d3.axisLeft(y).ticks(5));
 
     allCharts.push([svg, data, x, y, xHolder, yHolder]);
+    //
+    // let itemFirst = _.first(svg.selectAll('.axis-bottom .tick')['_groups'][0]);
+    // let itemLast = _.last(svg.selectAll('.axis-bottom .tick')['_groups'][0]);
+    // let firstX = d3.select(itemFirst).attr('transform').split('(')[1].split(',')[0];
+    // let lastX = d3.select(itemLast).attr('transform').split('(')[1].split(',')[0];
+    // console.log(firstX, lastX)
+    //
+    // var slider2 = d3.sliderHorizontal()
+    //     .ticks(data.length)
+    //     .step(1)
+    //     .width(lastX - firstX)
+    //     .on('onchange', val => {
+    //       d3.select("p#value2").text(val);
+    //     });
+    //
+    //
+    // let sliderA = svg.append("g").attr('id', `slide-${slugify(album)}`).classed('sliderA', true);
+    // var g = sliderA.attr("transform", `translate(${firstX},60)`);
+    //
+    // g.call(slider2);
+    //
+    // let tarray = sliderA.selectAll('.tick')['_groups'][0];
+    // tarray.forEach(d => {
+    //   console.log(d);
+    //   d3.select(d).append('circle')
+    //     .attr('r', 3)
+    //     .attr('fill', '#fff');
+    // });
+    //
+    // sliderA.select('.axis').attr('transform', "translate(0,0)");
+    // sliderA.select('.parameter-value').append('circle')
+    //   .attr('r', 5)
+    //   .attr('fill', '#000')
+    //   .attr('stroke-width', '2px')
+    //   .attr('stroke', '#fff');
 
   })
 }
@@ -310,18 +370,18 @@ const redraw = (svg, data, x, y, xHolder, yHolder) => {
   svg.selectAll(".bar")
       .data(data)
     .transition()
-      .attr("x", function(d) { return x(d.name); })
+      .attr("x", function(d) { return x(d.name.split(' (')[0]); })
       .attr("width", x.bandwidth())
       .attr("y", function(d) { return y(d[attr]); })
       .attr("height", function(d) { return height - y(d[attr]); });
 
   xHolder.call(d3.axisBottom(x))
-          .selectAll("text")
-          .attr("y", 0)
-          .attr("x", 15)
-          .attr("dy", ".35em")
-          .attr("transform", "rotate(90)")
-          .style("text-anchor", "start");
+        .selectAll("text")
+        .attr("y", 0)
+        .attr("x", -15)
+        .attr("dy", ".35em")
+        .attr("transform", "rotate(270)")
+        .style("text-anchor", "end");
 
   let ticks = d3.axisLeft(y).ticks(5);
   if(attr === 'duration_ms'){
@@ -426,6 +486,27 @@ const getTopTracks = (error, fm_top, stevie_top, lindsey_top) => {
     console.log(track.popularity, track.name, track.album.name);
   });
 }
+
+d3.select(window).on('scroll', d => {
+  const fLeg = d3.select('#fleetwood-legend').node().getBoundingClientRect();
+  const fSect = d3.select('#fleetwood-section').node().getBoundingClientRect();
+  const sLeg = d3.select('#stevie-legend').node().getBoundingClientRect();
+  const sSect = d3.select('#stevie-section').node().getBoundingClientRect();
+  if(fLeg['y'] <= 0 && Math.abs(fLeg['y']) <= fSect['height'] && (fSect['y'] - fLeg['height']*2) < 0 && Math.abs(fSect['y']) <= fSect['height']){
+    d3.select('#fleetwood-legend').classed('sticky', true);
+    d3.select('#fleetwood-holder').style('height', `${String(fLeg['height'])}px`).style('display', 'block');
+  } else {
+    d3.select('#fleetwood-legend').classed('sticky', false);
+    d3.select('#fleetwood-holder').style('display', 'none');
+  }
+  if(sLeg['y'] <= 0 && Math.abs(sLeg['y']) <= sSect['height'] && (sSect['y'] - sLeg['height']*2) < 0 && Math.abs(sSect['y']) <= sSect['height']){
+    d3.select('#stevie-legend').classed('sticky', true);
+    d3.select('#stevie-holder').style('height', `${String(sLeg['height'])}px`).style('display', 'block');
+  } else {
+    d3.select('#stevie-legend').classed('sticky', false);
+    d3.select('#stevie-holder').style('display', 'none');
+  }
+});
 
 d3.queue()
   .defer(d3.json, `${window.location.href}build/assets/data/fleetwood_albums.json`)

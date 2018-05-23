@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,500,700,900');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono|Work+Sans:400,500,700,900');
 
 body {
   background-color: #000;
@@ -22,7 +22,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 h1{
-  font-size: 150px;
+  font-size: 200px;
   text-align: center;
   margin: auto;
   &.title{
@@ -34,7 +34,7 @@ h1{
     -webkit-text-stroke-color: #41f49b;
     color: rgba(209, 66, 244, 0.4);
     div{
-      font-size: 80px;
+      font-size: 120px;
       margin-top: -5px;
     }
   }
@@ -166,11 +166,14 @@ line, path{
 
 // background-image: linear-gradient(135deg, #f44153 25%, #000000 25%, #000000 50%, #f44153 50%, #f44153 75%, #000000 75%, #000000 100%);
 // background-size: 5.66px 5.66px;
-#fleetwood-legend{
+#fleetwood-legend .leg-items{
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   line-height: 2;
-  div{
+  @media(max-width: 500px){
+    line-height: 1.5;
+  }
+  .it{
     display: inline-block;
     margin: 0 15px;
     &:before{
@@ -182,6 +185,13 @@ line, path{
       position: relative;
       top: 1px;
       background-color: #f44153;
+      @media(max-width: 500px){
+        top: 3px;
+      }
+    }
+    @media(max-width: 500px){
+      font-size: 13px;
+      margin: 0 8px;
     }
   }
 }
@@ -203,11 +213,14 @@ line, path{
   }
 }
 
-#stevie-legend{
+#stevie-legend .leg-items{
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   line-height: 2;
-  div{
+  @media(max-width: 500px){
+    line-height: 1.5;
+  }
+  .it{
     display: inline-block;
     margin: 0 15px;
     &:before{
@@ -219,6 +232,13 @@ line, path{
       position: relative;
       top: 1px;
       background-color: #d142f4;
+      @media(max-width: 500px){
+        top: 3px;
+      }
+    }
+    @media(max-width: 500px){
+      font-size: 13px;
+      margin: 0 8px;
     }
   }
   .leg-co-authored{
@@ -252,6 +272,7 @@ line, path{
   grid-gap: 1rem; /* (3) */
   justify-content:space-evenly;
   align-content: flex-start;
+  margin-top: 40px;
 }
 
 .album {
@@ -405,3 +426,156 @@ select{
     border-color: #d142f4;
   }
 }
+
+.sticky{
+  position: fixed;
+  top: 0;
+  text-align: center;
+  background-color: #000;
+  width: 100%;
+  padding: 5px 0;
+  border-bottom: 1px solid #4c4c4c;
+}
+
+#fleetwood-holder, #stevie-holder{
+  display: none;
+  width: 100%;
+  position: relative;
+}
+
+.track-overlay{
+  stroke-width: 0px;
+}
+
+line.track, .track-inset{
+  stroke-width: 1px;
+}
+
+.sliderA .tick{
+  line, text{
+    display: none;
+  }
+}
+
+.parameter-value{
+  path, text{
+    display: none;
+  }
+}
+
+.player{
+  // text-align: center;
+  width: 100%;
+  // max-width: 300px;
+  margin: 20px auto 0;
+  // margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.player-content{
+  width: 100%;
+}
+
+.player-img{
+  // display: inline-block;
+  // float: left;
+  width: 50px;
+  height: 50px;
+  img{
+    width: 100%;
+  }
+  display: none;
+}
+
+@keyframes marquee {
+    0%   { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
+}
+
+.song-info{
+  // margin-left: 9px;
+  white-space: nowrap;
+  text-align: center;
+  // width: 100%;
+  // overflow-x: scroll;
+}
+
+.marquee{
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 15s linear infinite;
+}
+
+.song-title{
+  // text-align: left;
+  // margin-left: 11px;
+  // top: -4px;
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.album-title{
+  color: #828282;
+  // font-size: 13px;
+}
+
+audio{
+  margin: auto;
+  width: 300px;
+  display: block;
+}
+
+audio::-webkit-media-controls-panel{
+  // background-color: #000;
+  // color: #fff;
+  font-family: 'Roboto Mono', sans-serif;
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%) contrast(100%) invert(100%) brightness(1.2);
+}
+//
+audio::-webkit-media-controls-mute-button{
+  display: none;
+}
+//
+audio::-webkit-media-controls-play-button{
+  color: #000;
+}
+//
+audio::-webkit-media-controls-timeline-container{
+  color: #000;
+}
+//
+audio::-webkit-media-controls-current-time-display{
+  color: #000;
+}
+//
+audio::-webkit-media-controls-time-remaining-display{
+  color: #000;
+}
+//
+audio::-webkit-media-controls-timeline{
+  // color: #fff;
+}
+//
+audio::-webkit-media-controls-volume-slider-container{
+  display: none;
+}
+//
+audio::-webkit-media-controls-volume-slider{
+  display: none;
+}
+//
+audio::-webkit-media-controls-seek-back-button{
+  display: inline-block;
+}
+//
+// audio::-webkit-media-controls-seek-forward-button
+//
+// audio::-webkit-media-controls-fullscreen-button
+//
+// audio::-webkit-media-controls-rewind-button
+//
+// audio::-webkit-media-controls-return-to-realtime-button
+//
+// audio::-webkit-media-controls-toggle-closed-captions-button
