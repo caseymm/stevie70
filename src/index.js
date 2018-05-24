@@ -136,6 +136,9 @@ var margin = {top: 20, right: 0, bottom: 220, left: 30},
     width = 350 - margin.left - margin.right,
     height = 320 - margin.top - margin.bottom;
 
+
+let currentlyPlaying = false;
+
 const drawBar = (error, fm, stevie, allTracks, attribution, duets) => {
   attribution.forEach(d => {
     d.lower = d.song.toLowerCase();
@@ -167,9 +170,11 @@ const drawBar = (error, fm, stevie, allTracks, attribution, duets) => {
 
     let section = d3.select('#fleetwood-section .chart-section');
     let isStevie = false;
+    let artistClass = 'fleetwood';
     if(stevieNicks.indexOf(album) > -1){
       section = d3.select('#stevie-section .chart-section');
       isStevie = true;
+      artistClass = 'stevie';
     }
 
     let albumSect = section.append('div')
@@ -239,7 +244,7 @@ const drawBar = (error, fm, stevie, allTracks, attribution, duets) => {
     svg.selectAll(".bar")
         .data(data)
       .enter().append("rect")
-        // .attr('fill', d => { return `rgba(7,73,181,.${d.mode})`})
+        .attr('id', d => { return `id-${d.id}`})
         .attr("class", d => {
           if(isStevie){
             let attr = _.findWhere(duets, {'lower': d.name.toLowerCase().split(' (')[0]});
@@ -278,29 +283,60 @@ const drawBar = (error, fm, stevie, allTracks, attribution, duets) => {
         .attr("y", function(d) { return y(d[attr]); })
         .attr("height", function(d) { return height - y(d[attr]); })
         .on('click', d => {
-          d3.select('#stevie-audio audio').node().pause();
-          d3.select('#fleetwood-audio audio').node().pause();
-          // console.log(d, albumData);
-          let sourceNode = d3.select('#stevie-audio');
-          if(isStevie){
-            d3.select('#stevie-audio source').attr('src', d.preview_url);
-            d3.select('#stevie-audio audio').node().load();
-            d3.select('#stevie-audio audio').node().play();
+          if(d3.select(`.speaker-${d.id}`).node()){
+            console.log('speaker exists - already selected');
+            if(currentlyPlaying){
+              d3.select(`#${artistClass}-audio audio`).node().pause();
+            } else {
+              d3.select(`#${artistClass}-audio audio`).node().play();
+            }
           } else {
-            sourceNode = d3.select('#fleetwood-audio');
-            d3.select('#fleetwood-audio source').attr('src', d.preview_url);
-            d3.select('#fleetwood-audio audio').node().load();
-            d3.select('#fleetwood-audio audio').node().play();
+            console.log('new song selected');
+            d3.select('#stevie-audio audio').node().pause();
+            d3.select('#fleetwood-audio audio').node().pause();
+            let barBox = d3.select(`#id-${d.id}`).node().getBBox();
+            d3.selectAll(`.speaker-icon.${artistClass}`).remove();
+            svg.append('g')
+               .append('image')
+               .classed(`speaker-icon playing ${artistClass} speaker-${d.id}`, true)
+               .attr('href', `${window.location.href}build/assets/images/speaker.gif`)
+               .attr('width', 20)
+               .attr('height', 15)
+               .attr('preserveAspectRatio', 'xMinYMin')
+               .attr('x', barBox['x'] + (barBox['width'] - 20)/2)
+               .attr('y', barBox['y'] - 20)
+
+             svg.append('g')
+                .append('image')
+                .classed(`speaker-icon paused ${artistClass} speaker-${d.id}`, true)
+                .attr('href', `${window.location.href}build/assets/images/speaker_dark.png`)
+                .attr('width', 20)
+                .attr('height', 15)
+                .attr('preserveAspectRatio', 'xMinYMin')
+                .attr('x', barBox['x'] + (barBox['width'] - 20)/2)
+                .attr('y', barBox['y'] - 20)
+            let sourceNode = d3.select('#stevie-audio');
+            if(isStevie){
+              d3.select('#stevie-audio source').attr('src', d.preview_url);
+              d3.select('#stevie-audio audio').node().load();
+              d3.select('#stevie-audio audio').node().play();
+            } else {
+              sourceNode = d3.select('#fleetwood-audio');
+              d3.select('#fleetwood-audio source').attr('src', d.preview_url);
+              d3.select('#fleetwood-audio audio').node().load();
+              d3.select('#fleetwood-audio audio').node().play();
+            }
+            sourceNode.select('.player-img img').attr('src', albumData.images[1]['url']);
+            sourceNode.select('.song-title').html(d.name.split(' (')[0]);
+            sourceNode.select('.album-title').html(`(${album})`);
+            let titleWidth = sourceNode.select('.song-title').node().getBoundingClientRect()['width'];
+            let albumWidth = sourceNode.select('.album-title').node().getBoundingClientRect()['width'];
+            sourceNode.select('.song-info').classed('marquee', false);
+            if(titleWidth + albumWidth > d3.select('.chart-section').node().getBoundingClientRect()['width'] - 20){
+              sourceNode.select('.song-info').classed('marquee', true);
+            }
           }
-          sourceNode.select('.player-img img').attr('src', albumData.images[1]['url']);
-          sourceNode.select('.song-title').html(d.name.split(' (')[0]);
-          sourceNode.select('.album-title').html(`(${album})`);
-          let titleWidth = sourceNode.select('.song-title').node().getBoundingClientRect()['width'];
-          let albumWidth = sourceNode.select('.album-title').node().getBoundingClientRect()['width'];
-          sourceNode.select('.song-info').classed('marquee', false);
-          if(titleWidth + albumWidth > d3.select('.chart-section').node().getBoundingClientRect()['width'] - 20){
-            sourceNode.select('.song-info').classed('marquee', true);
-          }
+
         });
 
     // add the x Axis
@@ -357,7 +393,73 @@ const drawBar = (error, fm, stevie, allTracks, attribution, duets) => {
     //   .attr('stroke', '#fff');
 
   })
+
+  let songIds = ['id-0qjfjKFoP7LaqLI2KI9M1Q', 'id-67oVj9wKv1T0effsUcny7A'];
+  console.log(allCharts);
+  songIds.forEach((d, i) => {
+    let barBox = d3.select(`#${d}`).node().getBBox();
+    let artistClassInit = 'fleetwood';
+    let svgA = allCharts[0][0];
+    if(i === 1){
+      artistClassInit = 'stevie';
+      svgA = allCharts[3][0];
+    }
+    svgA.append('g')
+       .append('image')
+       .classed(`speaker-icon playing ${artistClassInit}`, true)
+       .style('display', 'none')
+       .attr('href', `${window.location.href}build/assets/images/speaker.gif`)
+       .attr('width', 20)
+       .attr('height', 15)
+       .attr('preserveAspectRatio', 'xMinYMin')
+       .attr('x', barBox['x'] + (barBox['width'] - 20)/2)
+       .attr('y', barBox['y'] - 20)
+
+     svgA.append('g')
+        .append('image')
+        .classed(`speaker-icon paused ${artistClassInit}`, true)
+        .style('display', 'block')
+        .attr('href', `${window.location.href}build/assets/images/speaker_dark.png`)
+        .attr('width', 20)
+        .attr('height', 15)
+        .attr('preserveAspectRatio', 'xMinYMin')
+        .attr('x', barBox['x'] + (barBox['width'] - 20)/2)
+        .attr('y', barBox['y'] - 20)
+  })
+
 }
+
+let fleetwoodPlaying = false;
+
+d3.select('#fleetwood-audio audio').on('pause', e => {
+  console.log('paused');
+  currentlyPlaying = false;
+  d3.selectAll('.fleetwood.playing').style('display', 'none');
+  d3.selectAll('.fleetwood.paused').style('display', 'block');
+})
+
+d3.select('#fleetwood-audio audio').on('play', e => {
+  console.log('play');
+  currentlyPlaying = true;
+  d3.select('#stevie-audio audio').node().pause();
+  d3.selectAll('.fleetwood.playing').style('display', 'block');
+  d3.selectAll('.fleetwood.paused').style('display', 'none');
+})
+
+d3.select('#stevie-audio audio').on('pause', e => {
+  console.log('paused');
+  currentlyPlaying = false;
+  d3.selectAll('.stevie.playing').style('display', 'none');
+  d3.selectAll('.stevie.paused').style('display', 'block');
+})
+
+d3.select('#stevie-audio audio').on('play', e => {
+  console.log('play');
+  currentlyPlaying = true;
+  d3.select('#fleetwood-audio audio').node().pause();
+  d3.selectAll('.stevie.playing').style('display', 'block');
+  d3.selectAll('.stevie.paused').style('display', 'none');
+})
 
 const redraw = (svg, data, x, y, xHolder, yHolder) => {
   let phrase = attr;
