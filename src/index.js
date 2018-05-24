@@ -296,6 +296,7 @@ const drawBar = (error, fm, stevie, allTracks, attribution, duets) => {
             d3.select('#fleetwood-audio audio').node().pause();
             let barBox = d3.select(`#id-${d.id}`).node().getBBox();
             d3.selectAll(`.speaker-icon.${artistClass}`).remove();
+            console.log(svg)
             svg.append('image')
                .classed(`speaker-icon playing ${artistClass} speaker-${d.id}`, true)
                .attr('href', `${window.location.href}build/assets/images/speaker.gif`)
@@ -402,8 +403,7 @@ const drawBar = (error, fm, stevie, allTracks, attribution, duets) => {
       artistClassInit = 'stevie';
       svgA = allCharts[3][0];
     }
-    svgA.append('g')
-       .append('image')
+    svgA.append('image')
        .classed(`speaker-icon playing ${artistClassInit}`, true)
        .style('display', 'none')
        .attr('href', `${window.location.href}build/assets/images/speaker.gif`)
@@ -413,8 +413,7 @@ const drawBar = (error, fm, stevie, allTracks, attribution, duets) => {
        .attr('x', barBox['x'] + (barBox['width'] - 20)/2)
        .attr('y', barBox['y'] - 20)
 
-     svgA.append('g')
-        .append('image')
+     svgA.append('image')
         .classed(`speaker-icon paused ${artistClassInit}`, true)
         .style('display', 'block')
         .attr('href', `${window.location.href}build/assets/images/speaker_dark.png`)
