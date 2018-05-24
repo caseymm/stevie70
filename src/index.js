@@ -296,8 +296,7 @@ const drawBar = (error, fm, stevie, allTracks, attribution, duets) => {
             d3.select('#fleetwood-audio audio').node().pause();
             let barBox = d3.select(`#id-${d.id}`).node().getBBox();
             d3.selectAll(`.speaker-icon.${artistClass}`).remove();
-            svg.append('g')
-               .append('image')
+            svg.append('image')
                .classed(`speaker-icon playing ${artistClass} speaker-${d.id}`, true)
                .attr('href', `${window.location.href}build/assets/images/speaker.gif`)
                .attr('width', 20)
@@ -306,8 +305,7 @@ const drawBar = (error, fm, stevie, allTracks, attribution, duets) => {
                .attr('x', barBox['x'] + (barBox['width'] - 20)/2)
                .attr('y', barBox['y'] - 20)
 
-             svg.append('g')
-                .append('image')
+             svg.append('image')
                 .classed(`speaker-icon paused ${artistClass} speaker-${d.id}`, true)
                 .attr('href', `${window.location.href}build/assets/images/speaker_dark.png`)
                 .attr('width', 20)
