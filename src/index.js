@@ -14,12 +14,16 @@ const months = ["Jaunuary",
                 "November",
                 "December"];
 
+let songIds = ['id-0qjfjKFoP7LaqLI2KI9M1Q', 'id-67oVj9wKv1T0effsUcny7A'];
+let currentSvgs = [];
+
 const slugify = (string) => {
   return string.split(' ').join('-');
 }
 
 const formatDate = (date) => {
-  return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+  // return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+  return `${date.getFullYear()}`;
 }
 
 let keepers = [];
@@ -112,6 +116,7 @@ d3.select('#fm-sel').on('change', d => {
   allCharts.forEach(d => {
     redraw(d[0], d[1], d[2], d[3], d[4], d[5]);
   });
+  redrawSpeaker();
 });
 
 d3.select('#stevie-sel').on('change', d => {
@@ -127,6 +132,7 @@ d3.select('#stevie-sel').on('change', d => {
   allCharts.forEach(d => {
     redraw(d[0], d[1], d[2], d[3], d[4], d[5]);
   });
+  redrawSpeaker();
 });
 
 let allCharts = [];
@@ -189,7 +195,7 @@ const drawBar = (error, fm, stevie, allTracks, attribution, duets) => {
              .attr('src', albumData['images'][0]['url']);
 
     let chunk = titleSect.append('div').classed('info', true);
-    chunk.append('h3').html(album);
+    chunk.append('h3').html(album.split(' (')[0]);
     chunk.append('h5').html(d => { return formatDate(albumData.js_date); });
 
     var svg = albumSect.append("svg")
@@ -299,7 +305,7 @@ const drawBar = (error, fm, stevie, allTracks, attribution, duets) => {
             console.log(svg)
             svg.append('image')
                .classed(`speaker-icon playing ${artistClass} speaker-${d.id}`, true)
-               .attr('href', `${window.location.href}build/assets/images/speaker.gif`)
+               .attr('xlink:href', `${window.location.href}build/assets/images/speaker.gif`)
                .attr('width', 20)
                .attr('height', 15)
                .attr('preserveAspectRatio', 'xMinYMin')
@@ -308,7 +314,7 @@ const drawBar = (error, fm, stevie, allTracks, attribution, duets) => {
 
              svg.append('image')
                 .classed(`speaker-icon paused ${artistClass} speaker-${d.id}`, true)
-                .attr('href', `${window.location.href}build/assets/images/speaker_dark.png`)
+                .attr('xlink:href', `${window.location.href}build/assets/images/speaker_dark.png`)
                 .attr('width', 20)
                 .attr('height', 15)
                 .attr('preserveAspectRatio', 'xMinYMin')
@@ -316,10 +322,14 @@ const drawBar = (error, fm, stevie, allTracks, attribution, duets) => {
                 .attr('y', barBox['y'] - 20)
             let sourceNode = d3.select('#stevie-audio');
             if(isStevie){
+              songIds[1] = `id-${d.id}`;
+              currentSvgs[1] = svg;
               d3.select('#stevie-audio source').attr('src', d.preview_url);
               d3.select('#stevie-audio audio').node().load();
               d3.select('#stevie-audio audio').node().play();
             } else {
+              songIds[0] = `id-${d.id}`;
+              currentSvgs[0] = svg;
               sourceNode = d3.select('#fleetwood-audio');
               d3.select('#fleetwood-audio source').attr('src', d.preview_url);
               d3.select('#fleetwood-audio audio').node().load();
@@ -355,45 +365,9 @@ const drawBar = (error, fm, stevie, allTracks, attribution, duets) => {
     yHolder.call(d3.axisLeft(y).ticks(5));
 
     allCharts.push([svg, data, x, y, xHolder, yHolder]);
-    //
-    // let itemFirst = _.first(svg.selectAll('.axis-bottom .tick')['_groups'][0]);
-    // let itemLast = _.last(svg.selectAll('.axis-bottom .tick')['_groups'][0]);
-    // let firstX = d3.select(itemFirst).attr('transform').split('(')[1].split(',')[0];
-    // let lastX = d3.select(itemLast).attr('transform').split('(')[1].split(',')[0];
-    // console.log(firstX, lastX)
-    //
-    // var slider2 = d3.sliderHorizontal()
-    //     .ticks(data.length)
-    //     .step(1)
-    //     .width(lastX - firstX)
-    //     .on('onchange', val => {
-    //       d3.select("p#value2").text(val);
-    //     });
-    //
-    //
-    // let sliderA = svg.append("g").attr('id', `slide-${slugify(album)}`).classed('sliderA', true);
-    // var g = sliderA.attr("transform", `translate(${firstX},60)`);
-    //
-    // g.call(slider2);
-    //
-    // let tarray = sliderA.selectAll('.tick')['_groups'][0];
-    // tarray.forEach(d => {
-    //   console.log(d);
-    //   d3.select(d).append('circle')
-    //     .attr('r', 3)
-    //     .attr('fill', '#fff');
-    // });
-    //
-    // sliderA.select('.axis').attr('transform', "translate(0,0)");
-    // sliderA.select('.parameter-value').append('circle')
-    //   .attr('r', 5)
-    //   .attr('fill', '#000')
-    //   .attr('stroke-width', '2px')
-    //   .attr('stroke', '#fff');
 
   })
 
-  let songIds = ['id-0qjfjKFoP7LaqLI2KI9M1Q', 'id-67oVj9wKv1T0effsUcny7A'];
   console.log(allCharts);
   songIds.forEach((d, i) => {
     let barBox = d3.select(`#${d}`).node().getBBox();
@@ -406,7 +380,7 @@ const drawBar = (error, fm, stevie, allTracks, attribution, duets) => {
     svgA.append('image')
        .classed(`speaker-icon playing ${artistClassInit}`, true)
        .style('display', 'none')
-       .attr('href', `${window.location.href}build/assets/images/speaker.gif`)
+       .attr('xlink:href', `${window.location.href}build/assets/images/speaker.gif`)
        .attr('width', 20)
        .attr('height', 15)
        .attr('preserveAspectRatio', 'xMinYMin')
@@ -416,13 +390,15 @@ const drawBar = (error, fm, stevie, allTracks, attribution, duets) => {
      svgA.append('image')
         .classed(`speaker-icon paused ${artistClassInit}`, true)
         .style('display', 'block')
-        .attr('href', `${window.location.href}build/assets/images/speaker_dark.png`)
+        .attr('xlink:href', `${window.location.href}build/assets/images/speaker_dark.png`)
         .attr('width', 20)
         .attr('height', 15)
         .attr('preserveAspectRatio', 'xMinYMin')
         .attr('x', barBox['x'] + (barBox['width'] - 20)/2)
         .attr('y', barBox['y'] - 20)
-  })
+  });
+
+  currentSvgs = [allCharts[0][0], allCharts[3][0]];
 
 }
 
@@ -458,7 +434,44 @@ d3.select('#stevie-audio audio').on('play', e => {
   d3.selectAll('.stevie.paused').style('display', 'none');
 })
 
+const redrawSpeaker = () => {
+  d3.selectAll(`.speaker-icon.fleetwood`).remove();
+  d3.selectAll(`.speaker-icon.stevie`).remove();
+  setTimeout(function(){
+    songIds.forEach((d, i) => {
+      let barBox = d3.select(`#${d}`).node().getBBox();
+      let artistClassInitA = 'fleetwood';
+      let svgA = currentSvgs[0];
+      if(i === 1){
+        artistClassInitA = 'stevie';
+        svgA = currentSvgs[1];
+      }
+      // should would could do transition here instead
+      svgA.append('image')
+         .classed(`speaker-icon playing ${artistClassInitA}`, true)
+         .style('display', 'none')
+         .attr('xlink:href', `${window.location.href}build/assets/images/speaker.gif`)
+         .attr('width', 20)
+         .attr('height', 15)
+         .attr('preserveAspectRatio', 'xMinYMin')
+         .attr('x', barBox['x'] + (barBox['width'] - 20)/2)
+         .attr('y', barBox['y'] - 20)
+
+       svgA.append('image')
+          .classed(`speaker-icon paused ${artistClassInitA}`, true)
+          .style('display', 'block')
+          .attr('xlink:href', `${window.location.href}build/assets/images/speaker_dark.png`)
+          .attr('width', 20)
+          .attr('height', 15)
+          .attr('preserveAspectRatio', 'xMinYMin')
+          .attr('x', barBox['x'] + (barBox['width'] - 20)/2)
+          .attr('y', barBox['y'] - 20)
+    });
+  }, 170);
+}
+
 const redraw = (svg, data, x, y, xHolder, yHolder) => {
+
   let phrase = attr;
   if(phrase === 'duration_ms'){
     phrase = 'duration';
@@ -551,7 +564,7 @@ const getAlbums = (error, fmAlbums, stevieAlbums) => {
                            .classed('album-text', true);
 
   albumText.append('h3')
-           .html(d => { return d.name; })
+           .html(d => { return d.name.split(' (')[0]; })
 
   albumText.append('h5')
           .html(d => { return formatDate(d.js_date); })
