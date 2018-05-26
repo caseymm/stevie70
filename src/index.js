@@ -155,7 +155,7 @@ const drawBar = (error, fm, stevie, allTracks, attribution, duets) => {
   Object.keys(stevie).forEach(song => {
     fm[song] = stevie[song];
   });
-  console.log(attribution);
+  // console.log(attribution);
   let selAlbums = keepers.map(d => d.name);
 
   selAlbums.forEach(album => {
@@ -165,7 +165,7 @@ const drawBar = (error, fm, stevie, allTracks, attribution, duets) => {
       d.name = d.name.split(' - ')[0];
       d.popularity = allTracks[d.id]['pop'];
     });
-    console.log(data);
+    // console.log(data);
     if(album === 'Rumours (Super Deluxe)'){
       let silverSprings = _.findWhere(data, {'name': 'Silver Springs'});
       let idx = _.indexOf(data, silverSprings);
@@ -260,6 +260,7 @@ const drawBar = (error, fm, stevie, allTracks, attribution, duets) => {
           if(isStevie){
             let attr = _.findWhere(duets, {'lower': d.name.toLowerCase().split(' (')[0]});
             if(attr){
+              console.log(attr)
               let str = 'bar';
               if(attr.author !== 'Nicks'){
                 str += ' other-author';
@@ -373,7 +374,7 @@ const drawBar = (error, fm, stevie, allTracks, attribution, duets) => {
 
   })
 
-  console.log(allCharts);
+  // console.log(allCharts);
   songIds.forEach((d, i) => {
     let barBox = d3.select(`#${d}`).node().getBBox();
     let artistClassInit = 'fleetwood';
@@ -630,8 +631,8 @@ d3.queue()
   .defer(d3.json, `${window.location.href}build/assets/data/stevie_nicks_albums.json`)
   .await(getAlbums);
 
-d3.queue()
-  .defer(d3.json, `${window.location.href}build/assets/data/fleetwood_top_tracks.json`)
-  .defer(d3.json, `${window.location.href}build/assets/data/stevie_top_tracks.json`)
-  .defer(d3.json, `${window.location.href}build/assets/data/lindsey_top_tracks.json`)
-  .await(getTopTracks);
+// d3.queue()
+//   .defer(d3.json, `${window.location.href}build/assets/data/fleetwood_top_tracks.json`)
+//   .defer(d3.json, `${window.location.href}build/assets/data/stevie_top_tracks.json`)
+//   .defer(d3.json, `${window.location.href}build/assets/data/lindsey_top_tracks.json`)
+//   .await(getTopTracks);
