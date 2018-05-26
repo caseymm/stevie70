@@ -635,6 +635,8 @@ audio::-webkit-media-controls-seek-back-button{
 .question{
   font-size: 24px;
   font-weight: bold;
+  margin: 60px auto 0;
+  line-height: 1.3;
 }
 
 .credits{
@@ -652,5 +654,24 @@ audio::-webkit-media-controls-seek-back-button{
   &.small{
     width: 80%;
     margin: 40px auto;
+  }
+}
+
+.chain{
+  width: 45px;
+  height: 45px;
+  font-size: 43px;
+  text-align: center;
+  background-color: #000;
+  margin: -74px auto 0;
+  padding: 10px;
+  display: block;
+  position: relative;
+}
+
+ul{
+  padding: 0 0 0 18px;
+  li{
+    margin-bottom: 7px;
   }
 }
