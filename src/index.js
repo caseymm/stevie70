@@ -34,7 +34,7 @@ let fleetwoodMac = ["Fleetwood Mac",
                    "Mirage (Deluxe)",
                    "Tango In The Night (Deluxe)",
                    "Behind The Mask",
-                   // "The Dance",
+                   "The Dance",
                    "Say You Will",];
 
 let stevieNicks = ["Bella Donna (Remastered)",
@@ -166,6 +166,11 @@ const drawBar = (error, fm, stevie, allTracks, attribution, duets) => {
       d.popularity = allTracks[d.id]['pop'];
     });
     console.log(data);
+    if(album === 'Rumours (Super Deluxe)'){
+      let silverSprings = _.findWhere(data, {'name': 'Silver Springs'});
+      let idx = _.indexOf(data, silverSprings);
+      data.splice(idx, 1);
+    }
 
     // set the ranges
     var x = d3.scaleBand()
@@ -337,7 +342,7 @@ const drawBar = (error, fm, stevie, allTracks, attribution, duets) => {
             }
             sourceNode.select('.player-img img').attr('src', albumData.images[1]['url']);
             sourceNode.select('.song-title').html(d.name.split(' (')[0]);
-            sourceNode.select('.album-title').html(`(${album})`);
+            sourceNode.select('.album-title').html(`(${album.split(' (')[0]})`);
             let titleWidth = sourceNode.select('.song-title').node().getBoundingClientRect()['width'];
             let albumWidth = sourceNode.select('.album-title').node().getBoundingClientRect()['width'];
             sourceNode.select('.song-info').classed('marquee', false);
@@ -522,7 +527,7 @@ const getAlbums = (error, fmAlbums, stevieAlbums) => {
                      "Mirage (Deluxe)",
                      "Tango In the Night (Deluxe)",
                      "Behind The Mask",
-                     // "The Dance",
+                     "The Dance",
                      "Say You Will",
                      "Bella Donna (Remastered)",
                      "The Wild Heart (Remastered)",
