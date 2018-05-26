@@ -260,7 +260,7 @@ const drawBar = (error, fm, stevie, allTracks, attribution, duets) => {
           if(isStevie){
             let attr = _.findWhere(duets, {'lower': d.name.toLowerCase().split(' (')[0]});
             if(attr){
-              console.log(attr)
+              // console.log(attr)
               let str = 'bar';
               if(attr.author !== 'Nicks'){
                 str += ' other-author';
