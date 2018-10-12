@@ -611,7 +611,12 @@ d3.select(window).on('scroll', d => {
   const sLeg = d3.select('#stevie-legend').node().getBoundingClientRect();
   const sSect = d3.select('#stevie-section').node().getBoundingClientRect();
   if(fLeg['y'] <= 0 && Math.abs(fLeg['y']) <= fSect['height'] && (fSect['y'] - fLeg['height']*2) < 0 && Math.abs(fSect['y']) <= fSect['height']){
+    console.log('')
     console.log('sticky')
+    console.log('fLeg[y] <= 0', fLeg['y'] <= 0)
+    console.log('Math.abs(fLeg[y]) <= fSect[height]', Math.abs(fLeg['y']) <= fSect['height'])
+    console.log('(fSect[y] - fLeg[height]*2) < 0', (fSect['y'] - fLeg['height']*2) < 0)
+    console.log('Math.abs(fSect[y]) <= fSect[height])', Math.abs(fSect['y']) <= fSect['height'])
     d3.select('#fleetwood-legend').classed('sticky', true);
     d3.select('#fleetwood-holder').style('height', `${String(fLeg['height'])}px`).style('display', 'block');
   } else {
